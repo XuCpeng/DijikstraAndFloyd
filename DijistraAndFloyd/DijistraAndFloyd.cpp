@@ -7,7 +7,6 @@
 using namespace std;
 const int MaxSize = 99;
 const int Maxcost = 999;
-static int visited[MaxSize] = { 0 };
 //ธจึ๚สýื้
 struct ShortEdge
 {
