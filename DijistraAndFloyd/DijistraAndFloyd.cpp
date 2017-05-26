@@ -61,16 +61,12 @@ void Dijikstra(MGraph<char> G, int v)
 	string path[MaxSize];
 
 	int i, k;
-	for (i = 0; i<G.vertexNum - 1; i++)
-	{
-		path[i] = "" + G.vertex[v];
-	}
 	for (i = 0; i < G.vertexNum; i++)
 	{
 		dist[i] = G.arc[v][i];
 		if (dist[i] != Maxcost)
 		{
-			path[i] = path[i] + G.vertex[i];
+			path[i] = "" + G.vertex[v] + G.vertex[i];
 			cout << path[i];
 		}
 		else
@@ -110,13 +106,14 @@ void Floyd(MGraph<char> G)
 {
 	int dist[MaxSize][MaxSize];
 	string path[MaxSize][MaxSize];
+	
 	for (int i = 0; i < G.vertexNum; i++)
 	{
 		for (int j = 0; j < G.vertexNum; j++)
 		{
 			dist[i][j] = G.arc[i][j];
 			if (dist[i][j] != Maxcost)
-				path[i][j] = G.vertex[i] + G.vertex[j];
+				path[i][j] = ""+G.vertex[i] + G.vertex[j];
 			else
 				path[i][j] = "";
 		}
